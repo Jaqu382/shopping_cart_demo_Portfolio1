@@ -5,7 +5,7 @@ function MenuApp(props) {
       {...item}
       handleAdd={props.handleAdd}
       key="menu-item-"
-      {...props.itemId}
+      {...item.itemId}
     />
   ));
 }

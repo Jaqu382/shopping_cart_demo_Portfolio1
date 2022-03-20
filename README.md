@@ -19,4 +19,4 @@ Modified the DIG4539C lab 4 in the following ways:
 
 -Implemented a cart component which will take stock of items added to cart. User is able to add and remove items from cart
 
--Implemented a header with a title that shows a running tally of the amount of items in the cart. (Also contains a link to the cart and to "my account" which are not implemented yet)
+-Implemented a header with a title that shows a running tally of the amount of unique items in the cart. (Also contains a link to the cart and to "my account" which are not implemented yet)

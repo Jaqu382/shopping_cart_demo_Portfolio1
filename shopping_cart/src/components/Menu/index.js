@@ -5,7 +5,11 @@ export default function Menu(props) {
     <fieldset>
       <legend>{props.menuName} Menu</legend>
       {props.menuItems.map((menuitem) => (
-        <MenuItem {...menuitem} handleAdd={props.handleAdd} />
+        <MenuItem
+          {...menuitem}
+          key={props.itemId}
+          handleAdd={props.handleAdd}
+        />
       ))}
     </fieldset>
   );

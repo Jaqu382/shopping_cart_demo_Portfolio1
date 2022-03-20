@@ -1,21 +1,31 @@
 export default function Cart(props) {
+  const { cartItems, handleAdd, handleRemove } = props;
+  const itemsPrice = cartItems.reduce((a, c) => a + c.itemPrice * c.qty, 0);
   return (
-    <div>
-      <hr></hr>
-      <h2>My Basket</h2>
-      <div>{props.cartItems.length === 0 && <div>Cart is Empty</div>}</div>
+    <fieldset>
+      <legend>My Cart</legend>
+      <div>{props.cartItems.length === 0 && <div>Cart Is Empty</div>}</div>
       {props.cartItems.map((item) => (
-        <div>
-          <div>{item.name}</div>
+        <div key={item.itemId}>
+          <div>{item.itemName}</div>
           <div>
-            <button onClick={() => props.handleAdd(item)}>+</button>
-            <button onClick={() => props.handleRemove(item)}>-</button>
-            <div>
-              {item.qty} x ${item.itemPrice}
-            </div>
+            <button onClick={() => handleAdd(item)}>+</button>
+            <button onClick={() => handleRemove(item)}>-</button>
+          </div>
+          <div>
+            {item.qty} x ${item.itemPrice}
           </div>
         </div>
       ))}
-    </div>
+      {cartItems.length !== 0 && (
+        <div>
+          <hr />
+          <div>
+            <strong>Total Items Price</strong>
+          </div>
+          <div>${itemsPrice}</div>
+        </div>
+      )}
+    </fieldset>
   );
 }

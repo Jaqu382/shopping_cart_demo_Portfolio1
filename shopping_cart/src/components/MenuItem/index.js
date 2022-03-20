@@ -3,13 +3,14 @@ import React from "react";
 
 export default function MenuItem(props) {
   return (
-    <div class="menu-item" id="menu-item-" {...props.itemId}>
-      <h2>{props.itemName}</h2>
+    <div class="menu-item" key="menu-item-" {...props.itemId}>
+      <h3>{props.itemName}</h3>
+      <img></img>
       <span>${props.itemPrice}</span>
       <p>{props.itemDescription}</p>
-      <button onClick={() => props.handleAdd(props.menuitem)}>
-        Add to Cart
-      </button>
+      <div>
+        <button onClick={() => props.handleAdd(props)}>Add to Cart</button>
+      </div>
     </div>
   );
 }

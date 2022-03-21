@@ -11,7 +11,7 @@ export default function Header(props) {
             <a href="../app.js">My Account</a>
           </li>
           <li>
-            <a href="../app.js">Cart</a>
+            <a href="#myCart">Cart</a>
 
             {props.countCartItems ? <span>{props.countCartItems}</span> : " "}
           </li>
